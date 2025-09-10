@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+/* seus estilos globais aqui */
+
+/** Esconde a sidebar no desktop quando a classe .desktop-hidden é aplicada */
+@media (min-width: 1024px) {
+  #sidebar.desktop-hidden { display: none !important; }
+}
+
+@theme {
+  --color-brand-50:#f0f7ff; --color-brand-100:#d9ebff; --color-brand-200:#b3d6ff;
+  --color-brand-300:#86bfff; --color-brand-400:#58a7ff; --color-brand-500:#2a8fff;
+  --color-brand-600:#0e72e6; --color-brand-700:#0958b4; --color-brand-800:#073f82; --color-brand-900:#052b59;
+}

@@ -1,69 +1,88 @@
-# React + TypeScript + Vite
+# 🌬️ MQA · Dashboard Geral (Admin)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-blue?logo=tailwindcss)](https://tailwindcss.com)
+[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)](https://react.dev/)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-Currently, two official plugins are available:
+> **MQA** (Monitoramento da Qualidade do Ar)  
+> Este é o painel administrativo do sistema SaaS de monitoramento de ambientes escolares.  
+> O objetivo é fornecer uma **visão geral em tempo real** de escolas, boxes (dispositivos), alertas, relatórios e uso.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Funcionalidades
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 📊 **Dashboard Geral** com KPIs (escolas ativas, boxes ativos, alertas, leituras).  
+- 🌗 **Tema Claro/Escuro** com persistência (`localStorage`) e toggle automático.  
+- 📈 **Gráficos** integrados (Chart.js 4).  
+- 📑 **Tabelas** com paginação, busca e tradução para PT-BR (DataTables).  
+- 🏫 Módulos: Escolas, Boxes, Alertas, Relatórios, Usuários e Suporte.  
+- 🔔 Menu de **notificações** e menu de **usuário** no topo.  
+- 📱 **Responsivo**: sidebar colapsável no desktop e drawer no mobile.  
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🖼️ Preview
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+> Exemplo da tela principal do Dashboard (tema escuro):
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+![Preview do Dashboard](./docs/screenshot-dark.png)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🚀 Tecnologias utilizadas
+
+- [React 18+](https://react.dev/)  
+- [TailwindCSS 3.4+](https://tailwindcss.com/)  
+- [Chart.js](https://www.chartjs.org/)  
+- [DataTables.js](https://datatables.net/)  
+
+---
+
+## 🔧 Como rodar o projeto
+
+### Pré-requisitos
+- [Node.js 18+](https://nodejs.org/en/)  
+- [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
+
+### Instalação
+```bash
+# Clonar este repositório
+git clone https://github.com/seu-usuario/app-padrao.git
+cd app-padrao
+
+# Instalar dependências
+npm install
+# ou
+yarn install
+
+
+🌗 Tema Claro/Escuro
+
+O sistema utiliza @custom-variant dark no Tailwind para permitir que a classe dark seja aplicada no elemento <html>.
+O tema atual é salvo no localStorage (mqa.theme), garantindo que o usuário retorne na mesma preferência.
+
+
+app-padrao/
+├── public/             # index.html, assets estáticos
+├── src/
+│   ├── components/     # componentes React
+│   ├── pages/          # telas e rotas
+│   ├── app.css         # Tailwind + custom-variant
+│   └── main.tsx        # entrada da aplicação
+├── package.json
+└── README.md
+
+
+📝 Licença
+
+Este projeto está sob a licença MIT
+.
+Sinta-se livre para usar, modificar e compartilhar 🚀
+
+
+👨‍💻 Autor
+
+Lucas Matos
+Professor, TI e criador do projeto MQA
+📍 Bahia, Brasil

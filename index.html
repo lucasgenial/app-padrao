@@ -1,13 +1,31 @@
-<!doctype html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+
+
+<html lang="pt-BR" class="h-full light" data-theme>
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Curso Base de React</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>MQA - Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />mode
+
+    <!-- 1) Tema no primeiro paint: lê localStorage; se vazio, segue o SO -->
+    <script>
+      (function() {
+        try {
+          var k='mqa.theme';
+          var saved = localStorage.getItem(k);
+          if (!saved) {
+            saved = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          if (saved === 'dark') document.documentElement.classList.add('dark');
+        } catch(e){}
+      })();
+    </script>
+    
   </head>
   <body>
-    <div id="app"></div>
+    <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
